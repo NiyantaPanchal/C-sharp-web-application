@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HiTechProjectDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AuthorDetail">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="Int32" Nullable="false" />
+    <Property Name="A_FNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="A_LNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="A_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BookDetails" Relationship="Self.FK_BookDetails_AuthorDetails" FromRole="AuthorDetails" ToRole="BookDetails" />
+  </EntityType>
+  <EntityType Name="BookDetail">
+    <Key>
+      <PropertyRef Name="ISBN" />
+    </Key>
+    <Property Name="ISBN" Type="Int32" Nullable="false" />
+    <Property Name="B_TITLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="B_UNITPRICE" Type="Int32" Nullable="false" />
+    <Property Name="B_YEAR" Type="Int32" Nullable="false" />
+    <Property Name="B_QOH" Type="Int32" Nullable="false" />
+    <Property Name="B_CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AID" Type="Int32" Nullable="false" />
+    <Property Name="SID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AuthorDetail" Relationship="Self.FK_BookDetails_AuthorDetails" FromRole="BookDetails" ToRole="AuthorDetails" />
+  </EntityType>
+  <EntityType Name="SupplierDetail">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="Int32" Nullable="false" />
+    <Property Name="SUPPLIER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BookDetails_AuthorDetails">
+    <End Role="AuthorDetails" Type="Self.AuthorDetail" Multiplicity="1" />
+    <End Role="BookDetails" Type="Self.BookDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorDetails">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="BookDetails">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HiTechProjectDBEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AuthorDetails" EntityType="Self.AuthorDetail" />
+    <EntitySet Name="BookDetails" EntityType="Self.BookDetail" />
+    <EntitySet Name="SupplierDetails" EntityType="Self.SupplierDetail" />
+    <AssociationSet Name="FK_BookDetails_AuthorDetails" Association="Self.FK_BookDetails_AuthorDetails">
+      <End Role="AuthorDetails" EntitySet="AuthorDetails" />
+      <End Role="BookDetails" EntitySet="BookDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

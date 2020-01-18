@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HiTechProjectDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthorDetails">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="int" Nullable="false" />
+    <Property Name="A_FNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="A_LNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="A_EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BookDetails">
+    <Key>
+      <PropertyRef Name="ISBN" />
+    </Key>
+    <Property Name="ISBN" Type="int" Nullable="false" />
+    <Property Name="B_TITLE" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="B_UNITPRICE" Type="int" Nullable="false" />
+    <Property Name="B_YEAR" Type="int" Nullable="false" />
+    <Property Name="B_QOH" Type="int" Nullable="false" />
+    <Property Name="B_CATEGORY" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AID" Type="int" Nullable="false" />
+    <Property Name="SID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SupplierDetails">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="int" Nullable="false" />
+    <Property Name="SUPPLIER" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BookDetails_AuthorDetails">
+    <End Role="AuthorDetails" Type="Self.AuthorDetails" Multiplicity="1" />
+    <End Role="BookDetails" Type="Self.BookDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorDetails">
+        <PropertyRef Name="AID" />
+      </Principal>
+      <Dependent Role="BookDetails">
+        <PropertyRef Name="AID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HiTechProjectDBModelStoreContainer">
+    <EntitySet Name="AuthorDetails" EntityType="Self.AuthorDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookDetails" EntityType="Self.BookDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SupplierDetails" EntityType="Self.SupplierDetails" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BookDetails_AuthorDetails" Association="Self.FK_BookDetails_AuthorDetails">
+      <End Role="AuthorDetails" EntitySet="AuthorDetails" />
+      <End Role="BookDetails" EntitySet="BookDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

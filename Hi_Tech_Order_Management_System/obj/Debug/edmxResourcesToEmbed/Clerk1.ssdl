@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HiTechProjectDBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HiTechProjectDB.dbo.Order' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="ISBN" />
+      <PropertyRef Name="ClerkID" />
+      <PropertyRef Name="OrderDate" />
+      <PropertyRef Name="OrderType" />
+      <PropertyRef Name="NoOfBook" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="ISBN" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClerkID" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="date" Nullable="false" />
+    <Property Name="OrderType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NoOfBook" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HiTechProjectDBModel1StoreContainer">
+    <EntitySet Name="Order" EntityType="Self.Order" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+</Schema>

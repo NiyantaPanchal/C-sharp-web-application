@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HiTechProjectDBModelStoreContainer" CdmEntityContainer="HiTechProjectDBEntities2">
+    <EntitySetMapping Name="AuthorDetails">
+      <EntityTypeMapping TypeName="HiTechProjectDBModel.AuthorDetail">
+        <MappingFragment StoreEntitySet="AuthorDetails">
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="A_FNAME" ColumnName="A_FNAME" />
+          <ScalarProperty Name="A_LNAME" ColumnName="A_LNAME" />
+          <ScalarProperty Name="A_EMAIL" ColumnName="A_EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookDetails">
+      <EntityTypeMapping TypeName="HiTechProjectDBModel.BookDetail">
+        <MappingFragment StoreEntitySet="BookDetails">
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="B_TITLE" ColumnName="B_TITLE" />
+          <ScalarProperty Name="B_UNITPRICE" ColumnName="B_UNITPRICE" />
+          <ScalarProperty Name="B_YEAR" ColumnName="B_YEAR" />
+          <ScalarProperty Name="B_QOH" ColumnName="B_QOH" />
+          <ScalarProperty Name="B_CATEGORY" ColumnName="B_CATEGORY" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupplierDetails">
+      <EntityTypeMapping TypeName="HiTechProjectDBModel.SupplierDetail">
+        <MappingFragment StoreEntitySet="SupplierDetails">
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="SUPPLIER" ColumnName="SUPPLIER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

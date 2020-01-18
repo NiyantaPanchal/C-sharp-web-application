@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF831DF9-25EE-4B16-9C04-F552F412BE2A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hi_Tech_Order_Management_System</RootNamespace>
+    <AssemblyName>Hi_Tech_Order_Management_System</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accountants.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Accountants.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accountants.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Accountants.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Accountants.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Accountants.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorDetail.cs">
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookDetail.cs">
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Business\LoginData.cs" />
+    <Compile Include="Business\MISManager.cs" />
+    <Compile Include="Business\Salesmanager.cs" />
+    <Compile Include="Clerk1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clerk1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Clerk1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clerk1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Clerk11.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clerk1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\LoginDB.cs" />
+    <Compile Include="DataAccess\ManagerDB.cs" />
+    <Compile Include="DataAccess\SalesManagerDB.cs" />
+    <Compile Include="DataAccess\UtilityDB.cs" />
+    <Compile Include="Gui\Accountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Accountant.Designer.cs">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Clerk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Clerk.Designer.cs">
+      <DependentUpon>Clerk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\SalesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\SalesManager.Designer.cs">
+      <DependentUpon>SalesManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\UpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\UpdatePassword.Designer.cs">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inventory.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Inventory.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>Clerk1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupplierDetail.cs">
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Gui\Accountant.resx">
+      <DependentUpon>Accountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Clerk.resx">
+      <DependentUpon>Clerk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\SalesManager.resx">
+      <DependentUpon>SalesManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\UpdatePassword.resx">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Clerk1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Clerk1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Accountants.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Accountants.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Accountants.edmx.diagram">
+      <DependentUpon>Accountants.edmx</DependentUpon>
+    </None>
+    <None Include="Clerk1.edmx.diagram">
+      <DependentUpon>Clerk1.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Inventory.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Inventory.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Inventory.edmx.diagram">
+      <DependentUpon>Inventory.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Order.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Accountants.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Accountants.edmx</DependentUpon>
+      <LastGenOutput>Accountants.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Accountants.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Accountants.edmx</DependentUpon>
+      <LastGenOutput>Accountants.cs</LastGenOutput>
+    </Content>
+    <Content Include="Clerk1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Clerk1.edmx</DependentUpon>
+      <LastGenOutput>Clerk1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Clerk1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Clerk1.edmx</DependentUpon>
+      <LastGenOutput>Clerk11.cs</LastGenOutput>
+    </Content>
+    <Content Include="Inventory.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Inventory.edmx</DependentUpon>
+      <LastGenOutput>Inventory.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Inventory.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Inventory.edmx</DependentUpon>
+      <LastGenOutput>Inventory.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
